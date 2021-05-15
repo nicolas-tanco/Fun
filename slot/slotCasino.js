@@ -1,6 +1,9 @@
-const saldo = document.getElementById("saldo")
+const num = document.getElementById("num")
 const img = [document.getElementById("img1"),document.getElementById("img2"),document.getElementById("img3")]
 const win= document.getElementById("win")
+const saldo1= document.getElementById("saldo")
+
+console.log(saldo1);
 
 
 function grid() {
@@ -16,7 +19,7 @@ function grid() {
     }
 }
 
-function ganancia(slot) {
+function ganancia1(slot) {
     
     if (slot[0] == 1 || slot[1] == 1 || slot[2] == 1) {
         return 0
@@ -32,35 +35,38 @@ function ganancia(slot) {
 }
 
 function saldo(){
-    const num = document.getElementById("num").value
-    //const saldoPasado= Number(saldo.value)
-    saldo.innerHtml+=num
+    saldo1.innerHTML = parseInt(document.getElementById("num").value)+""
 }
 
 function spin(){
-  let slot=[grid(),grid(),grid()]
-  let ganancia=ganancia(slot)
-  saldo.innerHtml=Number(saldo.value)-1
+  let slot1=[grid(),grid(),grid()]
+  let ganancia=ganancia1(slot1)
+  //saldo2.innerHtml=Number(saldo2.value)-1
   for(i=0;i<=2;i++){
-      if (slot[i]===2) img[i].src="https://www.famousbirthdays.com/faces/milei-javier-image.jpg"
-      if (slot[i]===3) img[i].src="https://i.blogs.es/553a2a/adam-smith-460_1371343c/450_1000.jpg"
-      if (slot[i]===4) img[i].src="https://www.biografiasyvidas.com/biografia/f/fotos/friedman_milton_1.jpg"
+      if (slot1[i]===1) img[i].src="https://estaticos.muyhistoria.es/media/cache/400x300_thumb/uploads/images/article/5763e56d5bafe818ac30cc16/marx-cuadrada_0.jpg"
+      if (slot1[i]===2) img[i].src="https://www.famousbirthdays.com/faces/milei-javier-image.jpg"
+      if (slot1[i]===3) img[i].src="https://i.blogs.es/553a2a/adam-smith-460_1371343c/450_1000.jpg"
+      if (slot1[i]===4) img[i].src="https://www.biografiasyvidas.com/biografia/f/fotos/friedman_milton_1.jpg"
   }
+  if(ganancia===0){
+    win.innerHTML="SOS COMUNISTA: PERDISTE TODO"
+   // saldo2.innerHtml=Number(saldo2.value)+2
+}
  if(ganancia===2){
      win.innerHTML="GANASTE $2!"
-     saldo.innerHtml=Number(saldo.value)+2
+    // saldo2.innerHtml=Number(saldo2.value)+2
  }
  if(ganancia===5){ 
      win.innerHTML="GANASTE $5!"
-     saldo.innerHtml=Number(saldo.value)+5
+    // saldo2.innerHtml=Number(saldo2.value)+5
     }
  if(ganancia===30) {
      win.innerHTML="GANASTE $30!"
-     saldo.innerHtml=Number(saldo.value)+30
+    // saldo2.innerHtml=Number(saldo2.value)+30
     }
  if(ganancia===200) {
      win.innerHTML="GANASTE $200!"
-     saldo.innerHtml=Number(saldo.value)+200
+    // saldo2.innerHtml=Number(saldo2.value)+200
     }
 }
 
