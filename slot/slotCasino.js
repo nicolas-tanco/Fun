@@ -35,38 +35,44 @@ function ganancia1(slot) {
 }
 
 function saldo(){
-    saldo1.innerHTML = parseInt(document.getElementById("num").value)+""
+    if(document.getElementById("num").value<0){
+        return win.innerHTML="Saldo invalido"
+    }
+    saldo1.innerHTML = Number(document.getElementById("num").value) + Number(saldo1.innerHTML)
 }
 
 function spin(){
+    if(saldo1.innerHTML<=0){
+        return win.innerHTML="Por favor agrega saldo"
+    }
   let slot1=[grid(),grid(),grid()]
   let ganancia=ganancia1(slot1)
-  //saldo2.innerHtml=Number(saldo2.value)-1
+  saldo1.innerHTML=Number(saldo1.innerHTML)-1
   for(i=0;i<=2;i++){
       if (slot1[i]===1) img[i].src="https://estaticos.muyhistoria.es/media/cache/400x300_thumb/uploads/images/article/5763e56d5bafe818ac30cc16/marx-cuadrada_0.jpg"
-      if (slot1[i]===2) img[i].src="https://www.famousbirthdays.com/faces/milei-javier-image.jpg"
+      if (slot1[i]===2) img[i].src="https://siepr.stanford.edu/sites/default/files/styles/large-profile/public/RobertLucas1.jpg?itok=hKxKZkv1"
       if (slot1[i]===3) img[i].src="https://i.blogs.es/553a2a/adam-smith-460_1371343c/450_1000.jpg"
       if (slot1[i]===4) img[i].src="https://www.biografiasyvidas.com/biografia/f/fotos/friedman_milton_1.jpg"
   }
   if(ganancia===0){
     win.innerHTML="SOS COMUNISTA: PERDISTE TODO"
-   // saldo2.innerHtml=Number(saldo2.value)+2
+    
 }
  if(ganancia===2){
      win.innerHTML="GANASTE $2!"
-    // saldo2.innerHtml=Number(saldo2.value)+2
+     saldo1.innerHTML=Number(saldo1.innerHTML)+2
  }
  if(ganancia===5){ 
      win.innerHTML="GANASTE $5!"
-    // saldo2.innerHtml=Number(saldo2.value)+5
+     saldo1.innerHTML=Number(saldo1.innerHTML)+5
     }
  if(ganancia===30) {
      win.innerHTML="GANASTE $30!"
-    // saldo2.innerHtml=Number(saldo2.value)+30
+     saldo1.innerHTML=Number(saldo1.innerHTML)+30
     }
  if(ganancia===200) {
      win.innerHTML="GANASTE $200!"
-    // saldo2.innerHtml=Number(saldo2.value)+200
+     saldo1.innerHTML=Number(saldo1.innerHTML)+200
     }
 }
 
