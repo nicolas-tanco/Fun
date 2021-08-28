@@ -557,15 +557,223 @@
 //  console.log(sumIntervals([ [ 1, 12 ], [ 3, 6 ], [ 5, 8 ], [ 7, 10 ], [ 9, 12 ] ]))
 
 
-  let r={
-    f: 9,
-    g:0,
-    d: function(){
-      return 1+1
+ // let r={
+ //   f: 9,
+ //   g:0,
+ //   d: function(){
+ //     return 1+1
+ //   }
+ // }
+//
+ // let z=r.d()
+//
+ // console.log(z);
+
+    
+//function fight(robot1, robot2, tactics) {
+//  let u=[]
+// for(let tactic in tactics) u.push([tactic, tactics[tactic]])
+// for(let index in robot1.tactics){
+//  if(u.indexOf(robot1.tactics[index])>=0) robot1.tactics[index]=tactics[u[u.indexOf(robot1.tactics[index])]]
+// }
+// for(let index in robot2.tactics){
+//  if(u.indexOf(robot2.tactics[index])>=0) robot2.tactics[index]=tactics[u[u.indexOf(robot2.tactics[index])]]
+// } 
+//
+//}
+function countPatternsFrom(firstPoint, length) {
+    const puntoInicial=firstPoint.charCodeAt(0)-97
+    const screen1=[[0,0,0,0,0,0,0,0,0]]
+    screen1[0][puntoInicial]=2
+    const totalCount=0
+    const vuelta=0
+    const screen2=[]
+
+
+    
+    
+    
+    while(vuelta<=length){
+        rondaIterada(screen2)
+        vuelta++
     }
-  }
+  
+  
+    function rondaIterada(screen){
+      let l=screen.length
+      screen.forEach(e=>ronda(e))
+      screen.slice(i)           
+    }
+    
+    
+    function ronda(screen){
+      let i = screen.indexOf(2)
+      switch (i) {
+        case 0:
+          a(screen)
+          break;
+        case 1:
+            b(screen)
+            break;
+            case 2:
+              c(screen)
+              break;
+            case 3:
+                d(screen)
+                break;
+                case 4:
+                  e(screen)
+                  break;
+                case 5:
+                    f(screen)
+                    break;
+                    case 6:
+                    g(screen)
+                      break;
+                    case 7:
+                        h(screen)
+                        break;
+        default:
+          i(screen)
+          break;
+      }
 
-  let z=r.d()
+    }
 
-  console.log(z);
+
+    function a(screen){
+      const count=0
+      const screen3=[]
+      screen3=screen.map(e=>e*1)
+      if(!screen[1]) {
+        count++
+        screen[0]=1
+        screen3[1]=2
+        screen.push(screen3)
+        screen3[1]=0
+      }
+      else if(!screen[2]) {
+        count++
+        screen[0]=1
+        screen3[2]=2
+        screen.push(screen3)
+        screen3[2]=0
+      }
+      if(!screen[3]) {
+        count++
+        screen[0]=1
+        screen3[3]=2
+        screen.push(screen3)
+        screen3[3]=0
+      }
+      else if(!screen[6]) {
+        count++
+        screen[0]=1
+        screen3[6]=2
+        screen v.push(screen3)
+        screen3[6]=0
+      }
+      if(!screen[4]) count++
+      else if(!screen[8]) count++
+      if(!screen[5]) count++
+      if(!screen[7]) count++
+      totalCount+=count
+    }
+
+    function c(screen){
+      const count=0
+      if(!screen[1]) count++
+      else if(!screen[0]) count++
+      if(!screen[5]) count++
+      else if(!screen[8]) count++
+      if(!screen[4]) count++
+      else if(!screen[6]) count++
+      if(!screen[3]) count++
+      if(!screen[7]) count++
+      totalCount+=count
+    }
+
+    function b(screen){
+      const count=0
+      if(!screen[0]) count++
+      if(!screen[2]) count++
+      if(!screen[4]) count++
+      else if(!screen[7]) count++
+      if(!screen[3]) count++
+      if(!screen[5]) count++
+      if(!screen[8]) count++
+      if(!screen[6]) count++
+    }
+
+    function d(screen){
+      const count=0
+      if(!screen[0]) count++
+      if(!screen[1]) count++
+      if(!screen[4]) count++
+      else if(!screen[6]) count++
+      if(!screen[2]) count++
+      if(!screen[6]) count++
+      if(!screen[7]) count++
+      if(!screen[8]) count++
+    }
+
+    function e(screen){
+      const count=0;
+      screen.forEach((e)=>{if(e==0) count++})
+    }
+
+    function f(screen){
+      const count=0
+      if(!screen[0]) count++
+      if(!screen[1]) count++
+      if(!screen[4]) count++
+      else if(!screen[3]) count++
+      if(!screen[2]) count++
+      if(!screen[6]) count++
+      if(!screen[7]) count++
+      if(!screen[8]) count++
+    }
+
+    function g(screen){
+      const count=0
+      if(!screen[3]) count++
+      else if(!screen[0]) count++
+      if(!screen[7]) count++
+      else if(!screen[8]) count++
+      if(!screen[4]) count++
+      else if(!screen[2]) count++
+      if(!screen[1]) count++
+      if(!screen[5]) count++
+      totalCount+=count
+    }
+
+   
+      function h(screen){
+        const count=0
+        if(!screen[0]) count++
+        if(!screen[2]) count++
+        if(!screen[4]) count++
+        else if(!screen[1]) count++
+        if(!screen[2]) count++
+        if(!screen[6]) count++
+        if(!screen[7]) count++
+        if(!screen[8]) count++
+      }
+
+
+      function i(screen){
+        const count=0
+        if(!screen[7]) count++
+        else if(!screen[6]) count++
+        if(!screen[5]) count++
+        else if(!screen[2]) count++
+        if(!screen[4]) count++
+        else if(!screen[0]) count++
+        if(!screen[1]) count++
+        if(!screen[3]) count++
+        totalCount+=count
+      }
+
+
+}
 
