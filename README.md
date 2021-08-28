@@ -2,4 +2,4 @@
 
 Codewars: 4 kyu
 
-binance api with market data
+Binance api with market data
